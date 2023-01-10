@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  max-width: 800px;
+  min-width: 320px;
+  margin: 0px auto;
+}
+#hero {
+  margin: 0;
+  height: 200px;
+  background-image: url("images/saloon.jpg");
+  width: 100%;
+  box-shadow: 0px 2px 3px rgb(77, 92, 92);
+}
+#title {
+  text-align: center;
+  color: antiquewhite;
+  background-color: rgb(103, 134, 124);
+  border-radius: 4px;
+  margin: 50px 30%;
+  box-shadow: -3px 3px 2px rgb(61, 77, 72);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#menu-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.menu-item {
+  margin: 10px auto;
+  border-bottom: 2px solid rgba(141, 165, 157, 0.5);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 140px;
+  position: relative;
+}
+.emoji-item {
+  font-size: 60px;
+  margin-right: 25px;
+}
+
+.item-description {
+  width: 60%;
+  min-width: 70px;
+  flex-wrap: wrap;
+}
+.item-name {
+  font-size: 30px;
+}
+
+.fa-plus {
+  margin-top: 10px;
+  color: rgba(54, 54, 54, 0.726);
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+#order-summary {
+  padding: 15px;
+}
