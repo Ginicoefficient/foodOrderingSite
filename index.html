@@ -20,8 +20,46 @@
   <body>
     <div id="hero"><h1 id="title">GusHub</h1></div>
     <div id="menu-container">*Will hold menu items*</div>
-    <div id="order-summary">*Order Summary*</div>
+    <div id="order-summary"></div>
     <div id="thanks-order">*Thanks for your order*</div>
+    <div id="modal-payment">
+      <div class="close-modal-btn-container">
+        <button class="modal-close-btn" id="modal-close-btn">X</button>
+      </div>
+      <h3>Enter Payment Information</h3>
+      <div>
+        <form>
+          <label></label>
+          <input
+            type="text"
+            name="name-field"
+            id="name-field"
+            placeholder="Enter your name"
+            aria-label="Full Name"
+            required
+          />
+          <input
+            type="text"
+            name="card-field"
+            id="card-field"
+            placeholder="Enter your card number"
+            aria-label="Card number"
+            required
+          />
+          <input
+            type="text"
+            name="ccv-field"
+            id="ccv-field"
+            placeholder="Enter your ccv"
+            aria-label="ccv-number"
+            required
+          />
+          <button class="modal-btn" type="button" id="payment-btn">
+            Submit Payment Information
+          </button>
+        </form>
+      </div>
+    </div>
     <script src="script.js" type="module"></script>
   </body>
 </html>
