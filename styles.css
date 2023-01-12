@@ -64,7 +64,12 @@ body {
   color: rgba(54, 54, 54, 0.726);
   border: 1px solid gray;
   border-radius: 50%;
-  padding: 15px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.fa-plus:active {
+  transform: scale(0.8);
 }
 
 /* styling the order */
@@ -122,7 +127,7 @@ button:active {
 }
 
 .remove-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.8);
 }
 
 #thanks-order {
@@ -130,7 +135,6 @@ button:active {
 }
 
 /* payment modal */
-
 #modal-payment {
   display: none;
   flex-direction: column;
@@ -149,6 +153,16 @@ button:active {
   justify-content: center;
   text-align: center;
   filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+}
+
+.disable-click-div {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
 }
 .close-modal-btn-container {
   align-self: flex-end;
@@ -194,4 +208,18 @@ input {
   margin: 20px 0px;
   width: 70%;
   border-radius: 4px;
+}
+
+/* thanks section */
+#thanks-order {
+  margin-top: 20px;
+  display: none;
+  width: 70%;
+  height: 80px;
+  background-color: rgb(100, 224, 75);
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
 }

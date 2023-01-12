@@ -40,8 +40,17 @@ document.addEventListener("click", function (e) {
   }
   if (e.target.id === "modal-close-btn") {
     document.getElementById("modal-payment").style.display = "none";
+    document.getElementById("disable-click-div").style.display = "none";
   }
 });
+
+//event listener for
+document
+  .getElementById("payment-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitPaymentInfo();
+  });
 
 //add items to myCart array
 function addToCart(menuId) {
@@ -66,7 +75,7 @@ function addToCart(menuId) {
 
 function renderOrder() {
   let cartHtml = ``;
-  let orderTotal = 0;
+  let orderTotal = null;
 
   myCart.forEach(function (item) {
     orderTotal += item.price * item.quantity;
@@ -85,11 +94,15 @@ function renderOrder() {
     }
   });
 
-  document.getElementById("order-summary").innerHTML =
-    `<div id="order-title">~Your Order~</div>` +
-    cartHtml +
-    `<div id="order-total">Order Total: $${orderTotal}</div>` +
-    `<button id="checkout-button">Complete Order</button>`;
+  if (orderTotal == 0) {
+    document.getElementById("order-summary").innerHTML = "";
+  } else {
+    document.getElementById("order-summary").innerHTML =
+      `<div id="order-title">~Your Order~</div>` +
+      cartHtml +
+      `<div id="order-total">Order Total: $${orderTotal}</div>` +
+      `<button id="checkout-button">Complete Order</button>`;
+  }
 }
 
 function removeFromCart(menuId) {
@@ -103,4 +116,19 @@ function removeFromCart(menuId) {
 
 function completeOrder() {
   document.getElementById("modal-payment").style.display = "flex";
+  document.getElementById("disable-click-div").style.display = "flex";
+}
+
+function submitPaymentInfo() {
+  document.getElementById("modal-payment").style.display = "none";
+  document.getElementById("disable-click-div").style.display = "none";
+  document.getElementById("order-summary").style.display = "none";
+  document.getElementById("thanks-order").style.display = "flex";
+
+  const paymentInfo = new FormData(document.getElementById("payment-form"));
+  document.getElementById(
+    "thanks-order"
+  ).innerHTML = `Thanks for your order ${paymentInfo.get(
+    "name-field"
+  )}! It's on it's way`;
 }
